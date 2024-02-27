@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Подготовка к ЕГЭ по информатике</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename = 'main.css')}}"
+      />
+    </head>
+    
+    <body class="column-flex centralize">
+      <div class="container main-win change column-flex">
+        <div class="container main-filters-box row-flex centralize">
+          <div class="button show-base-btn container centralize">Показать базу заданий</div>
+        <div class="container num-filters-box filter-box column-flex">
+          <p>Поиск по номеру</p>
+          <input
+            type="number"
+            placeholder="Номер задачи"
+            class="row-flex centralize num-filters-input filters-input"
+          />
+          <input
+            type="button"
+            value="Показать задачу"
+            class="row-flex centralize num-filters-button filters-button"
+          />
+        </div>
+        <div class="container type-filters-box filter-box column-flex">
+          <p>Поиск по типу</p>
+          <div class="container type-select select row-flex">
+            <p></p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M5.70711 9.71069C5.31658 10.1012 5.31658 10.7344 5.70711 11.1249L10.5993 16.0123C11.3805 16.7927 12.6463 16.7924 13.4271 16.0117L18.3174 11.1213C18.708 10.7308 18.708 10.0976 18.3174 9.70708C17.9269 9.31655 17.2937 9.31655 16.9032 9.70708L12.7176 13.8927C12.3271 14.2833 11.6939 14.2832 11.3034 13.8927L7.12132 9.71069C6.7308 9.32016 6.09763 9.32016 5.70711 9.71069Z"
+                fill="#0F0F0F"
+              />
+            </svg>
+          </div>
+          <div
+            class="container type-select-inner select-inner column-flex"
+          ></div>
+        </div>
+        <input
+          type="button"
+          value="Показать задачу"
+          class="row-flex centralize type-filters-button filters-button"
+        />
+        <div class="button base-btn container centralize">Назад</div>
+        <!-- <div class="button button-to-change centralize container">
+                    Создать задание
+                </div>
+                <div class="button button-to-base_red centralize container">
+                    Редактироать базу заданий
+                </div>   -->
+      </div>
+      <div class="container column-flex base-widgets">
+    </div>
+      <div class="big-change-widget column-flex">
+        <div class="container change-widget task column-flex">
+          <div class="task-top change-top row-flex">
+            <div class="task-number-ege change-number-ege centralize">
+              <input type="number" class="change-ege-input" />
+            </div>
+            <div class="task-number-all change-number-all"></div>
+          </div>
+        </div>
+        <div class="container new-node-group">
+          <div class="add-node-button centralize container row-flex">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+              class="plus-svg"
+              viewBox="0 0 32 32"
+              version="1.1"
+            >
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+                sketch:type="MSPage"
+              >
+                <g
+                  id="Icon-Set"
+                  sketch:type="MSLayerGroup"
+                  transform="translate(-464.000000, -1087.000000)"
+                  fill="#000000"
+                >
+                  <path
+                    d="M480,1117 C472.268,1117 466,1110.73 466,1103 C466,1095.27 472.268,1089 480,1089 C487.732,1089 494,1095.27 494,1103 C494,1110.73 487.732,1117 480,1117 L480,1117 Z M480,1087 C471.163,1087 464,1094.16 464,1103 C464,1111.84 471.163,1119 480,1119 C488.837,1119 496,1111.84 496,1103 C496,1094.16 488.837,1087 480,1087 L480,1087 Z M486,1102 L481,1102 L481,1097 C481,1096.45 480.553,1096 480,1096 C479.447,1096 479,1096.45 479,1097 L479,1102 L474,1102 C473.447,1102 473,1102.45 473,1103 C473,1103.55 473.447,1104 474,1104 L479,1104 L479,1109 C479,1109.55 479.447,1110 480,1110 C480.553,1110 481,1109.55 481,1109 L481,1104 L486,1104 C486.553,1104 487,1103.55 487,1103 C487,1102.45 486.553,1102 486,1102 L486,1102 Z"
+                    id="plus-circle"
+                    sketch:type="MSShapeGroup"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <p>Новый узел</p>
+          </div>
+          <div class="add-node-inner container row-flex">
+            <div class="add-node-text add-node-button centralize">Текст</div>
+  
+            <div class="add-node-img add-node-button centralize">Изображение</div>
+  
+            <div class="add-node-file add-node-button centralize">Файл</div>
+  
+            <div class="add-node-back add-node-button centralize">Назад</div>
+          </div>
+        </div>
+        <div class="container add-node-button centralize save-button">
+          Сохранить
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="{{url_for('static', filename = 'main.js')}}"></script>
+  <script>
+    change();
+  </script>
+</html>

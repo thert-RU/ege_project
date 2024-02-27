@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Подготовка к ЕГЭ по информатике</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}" />
+  </head>
+
+  <body class="column-flex">
+    <input type="hidden" name="form-input" value="start" />
+    <div class="container main-win start row-flex centralize">
+      <div class="container nav-group row-flex centralize">
+        <div class="container button button-base centralize">База заданий</div>
+        <div class="container button button-variants centralize">Варианты</div>
+      </div>
+      <div class="container row-flex login-group centralize">
+        <div class="button-login button container row-flex centralize">
+          Войти
+        </div>
+        <div class="button-reg button container row-flex centralize">
+          Регистрация
+        </div>
+      </div>
+    </div>
+    <div class="container main-win base row-flex centralize"></div>
+  </body>
+  <script src="{{url_for('static', filename='main.js')}}"></script>
+</html>
