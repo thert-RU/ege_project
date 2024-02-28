@@ -8,9 +8,13 @@ class Task {
         this.ans = ans
         this.widget = document.createElement('div')
         this.widget.innerHTML = widget_inner
+        let ans_widget = document.createElement('div')
+        ans_widget.className = 'task-ans'
+        ans_widget.innerHTML = this.ans
         this.widget.className = `container column-flex task task${this.number_ege}-ege task${this.number_all}-all theme-${this.theme}`
         this.widget.querySelector('.task-number-ege').innerHTML = `${this.number_ege}`
         this.widget.querySelector('.task-number-all').innerHTML = `№${this.number_all }`
+        this.widget.appendChild(ans_widget)
         this.red = red
         // if (red){
         //     let task_top = this.widget.querySelector('task-top')
@@ -147,7 +151,7 @@ class Base {
 }   
 
 class TaskWidget{
-    constructor(widget, base){
+    constructor(widget, base, ans_widget){
         this.widget = widget
         this.base = base
         this.widget.style.border = 'none'
@@ -155,7 +159,9 @@ class TaskWidget{
         this.files = []
         this.nodes = []
         this.tasks = []
+        this.ans_widget = ans_widget
         this.count_nodes = 0
+        // this.show()
         
     }
     main(base, new_btn, inner, text_btn, img_btn, file_btn, back_btn, save_btn, num_field, num, ege_input){
@@ -202,7 +208,7 @@ class TaskWidget{
                     console.log(node.files)
             }
             console.log(this.form.form.innerHTML)
-            let names = {'number_ege':ege_input.value, 'theme':'theme', 'widget':nodes, 'ans':'ans'}
+            let names = {'number_ege':ege_input.value, 'theme':'theme', 'widget':nodes, 'ans':this.ans_widget.value}
             
             let names_input = document.createElement('input')
             names_input.type = 'hidden'
@@ -299,8 +305,8 @@ class TaskWidget{
                     group.style.display = 'none'
                 }
             })
-
             this.widget.appendChild(group)
+
             this.widget.appendChild(i)
         }
     }
@@ -330,6 +336,15 @@ class TaskWidget{
         }
         // return [nodes, files]
         return nodes
+    }
+    createAnsNode(text=''){
+        let input = document.createElement('textarea')
+        input.value = text
+        input.placeholder = 'answer'
+            // input.rows = '10rem'
+            // input.cols = '10rem'
+        input.className = 'ans-node add-node-input'
+        return input
     }
     createInputTextNode(text = ''){
         let input = document.createElement('textarea')
@@ -389,6 +404,13 @@ class TaskWidget{
         return input
     }
     addNewNode(text_node){
+        // let index = this.nodes.indexOf(input)
+        // if (index > -1){
+        //     this.nodes.slice(index, index)
+        // }
+        // else{
+        //     console.log('syka ne poluchilos da kakogo huya')
+        // }
         this.nodes.push(text_node)
         this.show()
     }
@@ -570,7 +592,9 @@ async function change(){
             show_base_btn.innerHTML = 'Показать базу заданий'
         }
     })
-    let add_task = new TaskWidget(task_widget, base_widget)
+    let ans_widget = big_change_widget.querySelector('.ans-node')
+    console.log(ans_widget)
+    let add_task = new TaskWidget(task_widget, base_widget, ans_widget)
     
     let select = document.querySelector('.type-select')
     let select_text = select.querySelector('p')

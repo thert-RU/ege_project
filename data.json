@@ -1,1 +1,1 @@
-{"tasks": {}, "variants": {}}
+{"tasks": {"1": {"number_ege": "1", "theme": "theme", "widget": "<div class=\"task-top row-flex\"><div class=\"task-number-ege centralize\"></div> <div class=\"task-number-all\"></div></div><div class=\"container column-flex task-info\"><p class=\"task-text\">asdasdasdasdsadasdas</p><img class=\"task-img\" src=\"\"></div>", "ans": "ans", "sources": ["/ege%20project/img/1_1.png"]}}, "variants": {}}

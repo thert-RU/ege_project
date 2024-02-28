@@ -2,7 +2,7 @@ import os, json
 from flask import request, session, Flask, url_for, render_template, redirect, flash
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = 'C:\\Users\\123\\Desktop\\python_projects\\ege project\\img'
+UPLOAD_FOLDER = f'{os.getcwd().replace("\\", "/")}/img'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'xml', 'xmls', 'csv', 'doc', 'docx'}
 
 class App(Flask):
