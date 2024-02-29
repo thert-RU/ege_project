@@ -10,7 +10,7 @@ class Task {
         this.widget.innerHTML = widget_inner
         let ans_widget = document.createElement('div')
         ans_widget.className = 'task-ans'
-        ans_widget.innerHTML = this.ans
+        ans_widget.innerHTML = `Ответ: ${this.ans}`
         this.widget.className = `container column-flex task task${this.number_ege}-ege task${this.number_all}-all theme-${this.theme}`
         this.widget.querySelector('.task-number-ege').innerHTML = `${this.number_ege}`
         this.widget.querySelector('.task-number-all').innerHTML = `№${this.number_all }`
@@ -534,7 +534,7 @@ async function start(){
     })
     
 }
-async function base(){
+async function base(folder){
     let start_widget = document.querySelector('.base')
     let change_btn = document.querySelector('.button-to-change')
     change_btn.addEventListener('click', ()=>{
@@ -559,10 +559,10 @@ async function base(){
         }
     })
     let base = new Base(base_widget, select, select_text, inner)
-    await base.main('/ege project/data.json')
+    await base.main(folder + '/data.json')
 
 }
-async function change(){
+async function change(folder){
     
     let to_base_button = document.querySelector('.base-btn')
     to_base_button.addEventListener('click', ()=>{
@@ -610,7 +610,7 @@ async function change(){
             inner.style.display = 'none'
         }
     })
-    await add_task.createFictiveBase('/ege project/data.json', select, select_text, inner)
+    await add_task.createFictiveBase(folder + '/data.json', select, select_text, inner)
     // let base = new Base(task_widget, select, select_text, inner, red=true)
     // await base.main('/ege project/data.json')
     

@@ -2,7 +2,9 @@ import os, json
 from flask import request, session, Flask, url_for, render_template, redirect, flash
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = f'{os.getcwd().replace("\\", "/")}/img'
+UPLOAD_FOLDER = f'{os.getcwd()}/img'
+MAIN_FOLDER = os.getcwd().split('\\')[-1]
+SHORT_UPLOAD_FOLDER = MAIN_FOLDER + '/img'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'xml', 'xmls', 'csv', 'doc', 'docx'}
 
 class App(Flask):
@@ -24,7 +26,7 @@ class App(Flask):
             return render_template('variants.html')
     def change(self):
         if request.method == 'GET':
-            return render_template('change.html')
+            return render_template('change.html', folder = app.config['MAIN_FOLDER'])
         if request.method == 'POST':
             # If the user does not select a file, the browser submits an
             # empty file without a filename.
@@ -77,7 +79,7 @@ class App(Flask):
                         del_task = data['tasks'][i]
                 if del_task:
                     for i in del_task['sources']:
-                        os.remove(os.path.join(self.config['UPLOAD_FOLDER']+i.split('/ege%20project/img')[1]))
+                        os.remove(os.path.join(self.config['UPLOAD_FOLDER']+i.split(app.config['SHORT_UPLOAD_FOLDER'])[1]))
                 data['tasks'] = {}
                 for i in range(1, len(new_tasks) + 1):
                     data['tasks'][i] = new_tasks[new_tasks_list[i-1]]
@@ -101,6 +103,9 @@ class App(Flask):
 app = App(__name__, template_folder=os.getcwd(), static_folder=os.getcwd())
 app.config['SECRET_KEY'] = '#rl(C1TRO84Xl*(O9d%0&ZIhl&k0uK(g'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['SHORT_UPLOAD_FOLDER'] = SHORT_UPLOAD_FOLDER
+app.config['MAIN_FOLDER'] = MAIN_FOLDER
+
 
 
 app.add_url_rule('/', 'index', app.index, methods=['GET', 'POST'])
