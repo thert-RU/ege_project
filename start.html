@@ -25,6 +25,10 @@
     
     
 </body> 
-<script type="text/javascript" src="{{url_for('static', filename = 'main.js')}}"></script>
-<script type="text/javascript">start()</script>
+<script type="module" src="{{url_for('static', filename = 'js/scripts/start.js')}}">    
+</script>
+<script type="module">
+    import {start} from "{{url_for('static', filename = 'js/scripts/start.js')}}"
+    start()
+</script>
 </html>

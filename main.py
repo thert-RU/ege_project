@@ -20,12 +20,13 @@ class App(Flask):
             return render_template('login.html')
     def base(self):
         if request.method == 'GET':
-            return render_template('base.html')
+            return render_template('base.html', folder=app.config['MAIN_FOLDER'])
     def variants(self):
         if request.method == 'GET':
             return render_template('variants.html')
     def change(self):
         if request.method == 'GET':
+            
             return render_template('change.html', folder = app.config['MAIN_FOLDER'])
         if request.method == 'POST':
             # If the user does not select a file, the browser submits an
