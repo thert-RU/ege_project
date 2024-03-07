@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8" />
+      <title>Подготовка к ЕГЭ по информатике</title>
+      <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}" />
+    </head>
+
+    <body class="column-flex centralize">
+        <div class="container main-win base column-flex">
+            <div class="rand_btn container button centralize">
+                рандом вариант
+            </div>
+            <div class="container base-widgets column-flex">
+            </div>
+        </div>
+</body> 
+<script type="module" src="{{url_for('static', filename = 'js/scripts/variants.js')}}">    
+</script>
+<script type="module">
+    import {variants} from "{{url_for('static', filename = 'js/scripts/variants.js')}}"
+    variants('/{{folder}}')
+</script>
+</html>
