@@ -23,7 +23,7 @@ class App(Flask):
             return render_template('base.html', folder=app.config['MAIN_FOLDER'])
     def variants(self):
         if request.method == 'GET':
-            return render_template('variants.html')
+            return render_template('variants.html', folder=app.config['MAIN_FOLDER'])
     def change(self):
         if request.method == 'GET':
             
