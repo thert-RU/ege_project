@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8" />
+      <title>Подготовка к ЕГЭ по информатике</title>
+      <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" />
+      <link rel="stylesheet" href="{{url_for('static', filename = 'css/login.css')}}" />
+    </head>
+
+    <body class="column-flex centralize">
+    <div class="container main-win start row-flex centralize">
+        <div>
+            логин
+        </div>
+        <div>
+            пароль
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    
+    
+</body> 
+<script type="module" src="{{url_for('static', filename = 'js/scripts/login.js')}}">    
+</script>
+<script type="module">
+    import {login} from "{{url_for('static', filename = 'js/scripts/login.js')}}"
+    login()
+</script>
+</html>

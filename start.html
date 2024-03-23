@@ -3,28 +3,34 @@
   <head>
       <meta charset="UTF-8" />
       <title>Подготовка к ЕГЭ по информатике</title>
-      <link rel="stylesheet" href="{{url_for('static', filename = 'main.css')}}" />
+      <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}" />
+      <link rel="stylesheet" href="{{url_for('static', filename = 'css/start.css')}}" />
     </head>
 
     <body class="column-flex centralize">
     <div class="container main-win start row-flex centralize">
-        <div class="container nav-group column-flex">
-            <div class="container button button-base centralize">
-                База заданий
+
+        <!-- <div class="container column-flex paral-m paral-m-right info-widget">
+            
+        </div> -->
+
+        <div class="container nav-group column-flex space-around">
+            <div class="container button button-base centralize paral-m paral-m-right left-padding">
+                <span class="paral-m-left">База заданий</span>
             </div>
-            <div class="container button button-variants centralize">
-                Варианты
+            <div class="container button button-variants centralize paral-m paral-m-right left-padding">
+                <span class="paral-m-left">Варианты</span>
             </div>
         </div>
         <div class="container column-flex login-group centralize">
-            <div class="button-login button container row-flex centralize">
-                Войти
+            <div class="button-login button container row-flex centralize paral-m paral-m-right right-padding">
+                <span class="paral-m-left">Войти</span>
             </div>
         </div>
     </div>
     
     
-</body> 
+</body>
 <script type="module" src="{{url_for('static', filename = 'js/scripts/start.js')}}">    
 </script>
 <script type="module">

@@ -55,5 +55,6 @@ export async function start(){
         form.input.click()
 
     })
-    
+    document.querySelector('.nav-group').style.left = '-10vw'
+    document.querySelector('.login-group').style.right = '-10vw'
 }

@@ -1,0 +1,54 @@
+
+.paral-m{
+    background-color: orange;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    font-size: 3.5vh;
+}
+.left-padding {
+    padding-left: 25vw;
+}
+.left-padding:hover{
+    left: -5vw;
+    background-color: rgb(255, 189, 68);
+}
+.right-padding:hover{
+    right: -5vw;
+    background-color: rgb(255, 189, 68);
+}
+.right-padding{
+    padding-right: 25vw;
+    
+}
+.nav-group {
+    /* border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem; */
+    border: none;
+    height: 100vh;
+    position: absolute;
+    left: -100vw;
+    transition-property: left;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+
+}
+
+.login-group {
+    /* border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem; */
+    border: none;
+    position: absolute;
+    right: -100vw;
+    transition-property: right;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+
+.info-widget {
+    height: 55vh;
+    width: 20vw;
+    padding-right: 15vw;;
+}
